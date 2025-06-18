@@ -9,8 +9,6 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    env:
-      NODE_ENV: ${{ secrets.NODE_ENV }}
 
     steps:
       - name: Clonar repositorio
@@ -27,5 +25,6 @@ jobs:
       - name: Ejecutar pruebas
         run: npm test
 
-      - name: Ver entorno
-        run: echo "Entorno actual: $NODE_ENV"
+      - name: Configurar variables de entorno
+        run: echo "NODE_ENV=production" >> $GITHUB_ENV
+      
