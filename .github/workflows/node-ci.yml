@@ -23,8 +23,8 @@ jobs:
         run: npm install
 
       - name: Ejecutar pruebas
-        run: npx test
-
+        run: npm test
+        
       - name: Configurar variables de entorno
         run: echo "NODE_ENV=production" >> $GITHUB_ENV
       
