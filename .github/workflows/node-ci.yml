@@ -17,10 +17,13 @@ jobs:
       - name: Usar Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '22'
 
       - name: Instalar dependencias
         run: npm install
 
       - name: Ejecutar pruebas
         run: npm test
+
+      - name: Ver entorno
+        run: echo 'Entorno actual: ${{ secrets.NODE_ENV }}'
