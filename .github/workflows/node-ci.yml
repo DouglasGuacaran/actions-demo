@@ -26,5 +26,6 @@ jobs:
         run: npm test
         
       - name: Configurar variables de entorno
-        run: echo "NODE_ENV=production" >> $GITHUB_ENV
+        #run: echo "NODE_ENV=production" >> $GITHUB_ENV
+        run: echo "Entorno actual:${{ secrets.NODE_ENV }}"
       
